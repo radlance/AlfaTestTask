@@ -23,6 +23,7 @@ class CardSearchViewModel @Inject constructor(
 
     fun loadCardDetails(bin: String) {
         viewModelScope.launch {
+            _searchResultUiState.value = LoadResultUiState.Loading
             val result = remoteRepository.loadCardDetails(bin).map(mapper)
             _searchResultUiState.value = result
         }

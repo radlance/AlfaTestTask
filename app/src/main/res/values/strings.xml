@@ -2,4 +2,7 @@
     <string name="app_name">AlfaTestTask</string>
     <string name="bin">Bin</string>
     <string name="search">Искать</string>
+    <string name="no_connection">Отсутствует соединение с интернетом</string>
+    <string name="load_error">Ошибка загрузки</string>
+    <string name="no_information">Информации о карте не найдено</string>
 </resources>

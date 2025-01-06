@@ -1,7 +1,11 @@
 package com.radlance.alfatesttask.presentation
 
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import com.radlance.alfatesttask.domain.CardDetails
 
 interface LoadResultUiState {
@@ -11,19 +15,31 @@ interface LoadResultUiState {
     data class Success(private val cardDetails: CardDetails) : LoadResultUiState {
         @Composable
         override fun Show() {
-            Text(text = cardDetails.toString())
+            SuccessSearchScreen(cardDetails = cardDetails)
         }
     }
 
     data class Error(private val noConnection: Boolean) : LoadResultUiState {
         @Composable
         override fun Show() {
-            Text(text = if (noConnection) "no connection" else "unknown error")
+            ErrorSearchResult(noConnection = noConnection)
         }
     }
 
     object Initial : LoadResultUiState {
         @Composable
         override fun Show() {}
+    }
+
+    object Loading : LoadResultUiState {
+        @Composable
+        override fun Show() {
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                CircularProgressIndicator()
+            }
+        }
     }
 }
