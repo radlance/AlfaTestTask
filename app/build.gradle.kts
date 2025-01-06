@@ -10,12 +10,12 @@ plugins {
 
 android {
     namespace = "com.radlance.alfatesttask"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.radlance.alfatesttask"
         minSdk = 30
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -44,6 +44,8 @@ android {
 }
 
 dependencies {
+    implementation(libs.autolink.text)
+
     implementation(libs.androidx.material.icons.extended)
     implementation(libs.navigation.compose)
     implementation(libs.kotlinx.serialization.json)
