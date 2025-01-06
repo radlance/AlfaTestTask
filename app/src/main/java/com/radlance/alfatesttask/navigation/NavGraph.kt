@@ -1,15 +1,12 @@
 package com.radlance.alfatesttask.navigation
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.radlance.alfatesttask.presentation.CardSearch
+import com.radlance.alfatesttask.presentation.history.HistoryScreen
+import com.radlance.alfatesttask.presentation.search.CardSearch
 
 @Composable
 fun NavGraph(
@@ -22,9 +19,7 @@ fun NavGraph(
         }
 
         composable<History> {
-            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                Text(text = "history")
-            }
+            HistoryScreen()
         }
     }
 }

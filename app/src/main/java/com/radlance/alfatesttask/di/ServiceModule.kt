@@ -1,6 +1,6 @@
 package com.radlance.alfatesttask.di
 
-import com.radlance.alfatesttask.data.RemoteService
+import com.radlance.alfatesttask.data.remote.RemoteService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

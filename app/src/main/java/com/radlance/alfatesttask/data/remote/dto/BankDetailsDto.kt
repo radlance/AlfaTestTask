@@ -1,4 +1,4 @@
-package com.radlance.alfatesttask.data.dto
+package com.radlance.alfatesttask.data.remote.dto
 
 data class BankDetailsDto(
     val name: String?,

@@ -1,10 +1,10 @@
 package com.radlance.alfatesttask.di
 
-import com.radlance.alfatesttask.data.RemoteRepositoryImpl
-import com.radlance.alfatesttask.domain.LoadResult
-import com.radlance.alfatesttask.domain.RemoteRepository
-import com.radlance.alfatesttask.presentation.LoadResultMapper
-import com.radlance.alfatesttask.presentation.LoadResultUiState
+import com.radlance.alfatesttask.data.remote.RemoteRepositoryImpl
+import com.radlance.alfatesttask.domain.remote.LoadResult
+import com.radlance.alfatesttask.domain.remote.RemoteRepository
+import com.radlance.alfatesttask.presentation.search.LoadResultMapper
+import com.radlance.alfatesttask.presentation.search.LoadResultUiState
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

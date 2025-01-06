@@ -1,4 +1,4 @@
-package com.radlance.alfatesttask.domain
+package com.radlance.alfatesttask.domain.remote
 
 interface LoadResult {
     fun <T: Any> map(mapper: Mapper<T>): T

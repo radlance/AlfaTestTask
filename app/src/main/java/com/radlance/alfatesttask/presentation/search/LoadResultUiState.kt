@@ -1,4 +1,4 @@
-package com.radlance.alfatesttask.presentation
+package com.radlance.alfatesttask.presentation.search
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -6,7 +6,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.radlance.alfatesttask.domain.CardDetails
+import com.radlance.alfatesttask.domain.remote.CardDetails
 
 interface LoadResultUiState {
     @Composable

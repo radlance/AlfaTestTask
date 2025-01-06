@@ -1,4 +1,4 @@
-package com.radlance.alfatesttask.presentation
+package com.radlance.alfatesttask.presentation.search
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,7 +11,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.radlance.alfatesttask.R
-import com.radlance.alfatesttask.domain.CardDetails
+import com.radlance.alfatesttask.domain.remote.CardDetails
 import com.radlance.alfatesttask.ui.theme.AlfaTestTaskTheme
 
 @Composable

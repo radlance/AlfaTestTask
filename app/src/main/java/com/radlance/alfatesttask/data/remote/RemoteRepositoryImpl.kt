@@ -1,7 +1,7 @@
-package com.radlance.alfatesttask.data
+package com.radlance.alfatesttask.data.remote
 
-import com.radlance.alfatesttask.domain.LoadResult
-import com.radlance.alfatesttask.domain.RemoteRepository
+import com.radlance.alfatesttask.domain.remote.LoadResult
+import com.radlance.alfatesttask.domain.remote.RemoteRepository
 import java.net.UnknownHostException
 import javax.inject.Inject
 

@@ -1,4 +1,4 @@
-package com.radlance.alfatesttask.presentation
+package com.radlance.alfatesttask.presentation.search
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

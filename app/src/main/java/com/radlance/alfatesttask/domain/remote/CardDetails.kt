@@ -1,4 +1,4 @@
-package com.radlance.alfatesttask.domain
+package com.radlance.alfatesttask.domain.remote
 
 data class CardDetails(
     val scheme: String?,

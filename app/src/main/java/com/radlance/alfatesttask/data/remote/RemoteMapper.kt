@@ -1,7 +1,7 @@
-package com.radlance.alfatesttask.data
+package com.radlance.alfatesttask.data.remote
 
-import com.radlance.alfatesttask.data.dto.CardDetailsDto
-import com.radlance.alfatesttask.domain.CardDetails
+import com.radlance.alfatesttask.data.remote.dto.CardDetailsDto
+import com.radlance.alfatesttask.domain.remote.CardDetails
 
 abstract class RemoteMapper {
     protected fun CardDetailsDto.toCardDetails(): CardDetails {

@@ -5,4 +5,5 @@
     <string name="no_connection">Отсутствует соединение с интернетом</string>
     <string name="load_error">Ошибка загрузки</string>
     <string name="no_information">Информации о карте не найдено</string>
+    <string name="empty_search_history">История запросов пуста</string>
 </resources>

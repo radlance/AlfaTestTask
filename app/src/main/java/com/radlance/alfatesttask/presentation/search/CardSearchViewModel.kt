@@ -1,9 +1,11 @@
-package com.radlance.alfatesttask.presentation
+package com.radlance.alfatesttask.presentation.search
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.radlance.alfatesttask.domain.LoadResult
-import com.radlance.alfatesttask.domain.RemoteRepository
+import com.radlance.alfatesttask.domain.local.HistoryItem
+import com.radlance.alfatesttask.domain.local.HistoryRepository
+import com.radlance.alfatesttask.domain.remote.LoadResult
+import com.radlance.alfatesttask.domain.remote.RemoteRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -14,6 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class CardSearchViewModel @Inject constructor(
     private val remoteRepository: RemoteRepository,
+    private val historyRepository: HistoryRepository,
     private val mapper: LoadResult.Mapper<LoadResultUiState>
 ) : ViewModel() {
     private val _searchResultUiState =
@@ -26,6 +29,9 @@ class CardSearchViewModel @Inject constructor(
             _searchResultUiState.value = LoadResultUiState.Loading
             val result = remoteRepository.loadCardDetails(bin).map(mapper)
             _searchResultUiState.value = result
+
+            val historyItem = HistoryItem(bin = bin)
+            historyRepository.saveHistoryItem(historyItem)
         }
     }
 }

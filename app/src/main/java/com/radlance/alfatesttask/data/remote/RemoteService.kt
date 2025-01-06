@@ -1,6 +1,6 @@
-package com.radlance.alfatesttask.data
+package com.radlance.alfatesttask.data.remote
 
-import com.radlance.alfatesttask.data.dto.CardDetailsDto
+import com.radlance.alfatesttask.data.remote.dto.CardDetailsDto
 import retrofit2.http.GET
 import retrofit2.http.Path
 
