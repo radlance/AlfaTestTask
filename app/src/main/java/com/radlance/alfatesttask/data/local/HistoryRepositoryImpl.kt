@@ -14,6 +14,12 @@ class HistoryRepositoryImpl @Inject constructor(
     }
 
     override suspend fun saveHistoryItem(historyItem: HistoryItem) {
-        dao.saveHistoryItem(historyItem.toHistoryItemEntity())
+        val existQuery = dao.getHistoryItemByQuery(historyItem.bin)
+        if (existQuery != null) {
+            val updatedQuery = existQuery.copy(queryTime = historyItem.queryTime)
+            dao.updateHistoryItem(updatedQuery)
+        } else {
+            dao.saveHistoryItem(historyItem.toHistoryItemEntity())
+        }
     }
 }

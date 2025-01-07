@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.radlance.alfatesttask.domain.local.HistoryItem
 import com.radlance.alfatesttask.ui.theme.AlfaTestTaskTheme
+import java.time.LocalDateTime
 
 @Composable
 fun HistoryCard(
@@ -23,8 +24,8 @@ fun HistoryCard(
 ) {
     Card(
         modifier = modifier
-        .fillMaxWidth()
-        .height(60.dp)
+            .fillMaxWidth()
+            .height(60.dp)
     ) {
         Box(
             Modifier
@@ -32,7 +33,10 @@ fun HistoryCard(
                 .padding(horizontal = 16.dp),
             contentAlignment = Alignment.CenterStart
         ) {
-            Text(text = historyItem.bin, fontSize = 24.sp)
+            Text(
+                text = "${historyItem.bin} ${" - ${historyItem.bankName}".takeIf { historyItem.bankName.isNotBlank() } ?: ""}",
+                fontSize = 24.sp
+            )
         }
     }
 }
@@ -41,6 +45,13 @@ fun HistoryCard(
 @Composable
 private fun HistoryCardPreview() {
     AlfaTestTaskTheme {
-        HistoryCard(historyItem = HistoryItem(id = 1, bin = "123456"))
+        HistoryCard(
+            historyItem = HistoryItem(
+                id = 1,
+                bin = "123456",
+                bankName = "name",
+                queryTime = LocalDateTime.now()
+            )
+        )
     }
 }

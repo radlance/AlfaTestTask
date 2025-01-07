@@ -11,6 +11,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.radlance.alfatesttask.domain.local.HistoryItem
 import com.radlance.alfatesttask.ui.theme.AlfaTestTaskTheme
+import java.time.LocalDateTime
 
 @Composable
 fun HistoryList(
@@ -34,7 +35,12 @@ private fun HistoryListPreview() {
     AlfaTestTaskTheme {
         HistoryList(
             history = List(20) {
-                HistoryItem(id = it, bin = "${123456 + it}")
+                HistoryItem(
+                    id = it,
+                    bin = "${123456 + it}",
+                    bankName = "$it",
+                    queryTime = LocalDateTime.now()
+                )
             }
         )
     }

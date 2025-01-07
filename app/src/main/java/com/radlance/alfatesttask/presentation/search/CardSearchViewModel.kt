@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import java.time.LocalDateTime
 import javax.inject.Inject
 
 @HiltViewModel
@@ -27,11 +28,17 @@ class CardSearchViewModel @Inject constructor(
     fun loadCardDetails(bin: String) {
         viewModelScope.launch {
             _searchResultUiState.value = LoadResultUiState.Loading
-            val result = remoteRepository.loadCardDetails(bin).map(mapper)
-            _searchResultUiState.value = result
+            val result = remoteRepository.loadCardDetails(bin)
+            _searchResultUiState.value = result.map(mapper)
+            if (result is LoadResult.Success) {
+                val historyItem = HistoryItem(
+                    bin = bin.trim(),
+                    bankName = result.cardDetails.bankName ?: "",
+                    queryTime = LocalDateTime.now()
+                )
 
-            val historyItem = HistoryItem(bin = bin)
-            historyRepository.saveHistoryItem(historyItem)
+                historyRepository.saveHistoryItem(historyItem)
+            }
         }
     }
 }
